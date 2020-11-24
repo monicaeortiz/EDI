@@ -9,7 +9,7 @@ this will save an SVG file in your download folder
 
 function setup() {
   createCanvas(innerWidth, innerWidth, SVG); // Create SVG Canvas, set this to artboard size in pixels
-  strokeWeight(2); // 1 for axidraw, 0.001 for laser
+  strokeWeight(.2); // 1 for axidraw, 0.001 for laser
   stroke(0, 0, 0); // red is good for laser
   noFill(); // better not to have a fill for axidraw
 }
@@ -32,20 +32,20 @@ function genQuad() {
 // height = windowHeight;
   // set parameters
   var layers = 5; // how many polygons to draw at single position
-  var shift = 20; // degree of shift in square
-  var space = 20; // spacing between polygons
+  var shift = 0; // degree of shift in square
+  var space = 5; // spacing between polygons
 
-  var num = 3; // num squares in row/column
-  var w = (width - (num + 1) * space) / num; // width of individual square
+  var num = 50; // num squares in row/column
+  var w = (innerWidth - (num + 1) * space) / num; // width of individual square
 
   // draw background square: full size, white
   fill(255, 255, 255);
   stroke(255,255,255);
-  quad(0, 0, width, 0, width, height, 0, height)
+  quad(0, 0, innerWidth, 0, innerWidth, innerWidth, 0, innerWidth)
   noFill();
 
   // change stroke to random color
-  stroke(random(0,255),random(0,255),random(0,255));
+  stroke(random(200,255),random(200,255),random(200,255));
 
   // draw all squares
   for (var x = space; x < width - space; x += w + space) {
