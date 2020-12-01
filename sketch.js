@@ -32,7 +32,7 @@ function genQuad() {
 // height = windowHeight;
   // set parameters
   var layers = 5; // how many polygons to draw at single position
-  var shift = 7; // degree of shift in square
+  var shift = 30; // degree of shift in square
   var space = 5; // spacing between polygons
 
   var num = 3; // num squares in row/column
