@@ -9,7 +9,7 @@ this will save an SVG file in your download folder
 
 function setup() {
   createCanvas(innerWidth, innerWidth, SVG); // Create SVG Canvas, set this to artboard size in pixels
-  strokeWeight(.1); // 1 for axidraw, 0.001 for laser
+  strokeWeight(1); // 1 for axidraw, 0.001 for laser
   stroke(0, 0, 0); // red is good for laser
   noFill(); // better not to have a fill for axidraw
 }
@@ -32,7 +32,7 @@ function genQuad() {
 // height = windowHeight;
   // set parameters
   var layers = 5; // how many polygons to draw at single position
-  var shift = 2; // degree of shift in square
+  var shift = 7; // degree of shift in square
   var space = 5; // spacing between polygons
 
   var num = 3; // num squares in row/column
