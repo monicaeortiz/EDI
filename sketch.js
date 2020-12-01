@@ -9,7 +9,7 @@ this will save an SVG file in your download folder
 
 function setup() {
   createCanvas(innerWidth, innerWidth, SVG); // Create SVG Canvas, set this to artboard size in pixels
-  strokeWeight(1); // 1 for axidraw, 0.001 for laser
+  strokeWeight(10); // 1 for axidraw, 0.001 for laser
   stroke(0, 0, 0); // red is good for laser
   noFill(); // better not to have a fill for axidraw
 }
