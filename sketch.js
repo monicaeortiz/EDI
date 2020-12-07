@@ -8,8 +8,8 @@ this will save an SVG file in your download folder
 */
 
 function setup() {
-  createCanvas(innerWidth, innerWidth, SVG); // Create SVG Canvas, set this to artboard size in pixels
-  strokeWeight(10); // 1 for axidraw, 0.001 for laser
+  createCanvas(innerWidth, innerWidth); // Create SVG Canvas, set this to artboard size in pixels
+  strokeWeight(1); // 1 for axidraw, 0.001 for laser
   stroke(0, 0, 0); // red is good for laser
   noFill(); // better not to have a fill for axidraw
 }
@@ -23,29 +23,31 @@ function draw() {
 }
 
 function windowResized() {
-  resizeCanvas(innerWidth, innerWidth, false);
+  size = max(innerWidth, innerHeight);
+  resizeCanvas(innerWidth, innerHeight, false);
 }
 
 function genQuad() {
-
 // width = windowWidth;
 // height = windowHeight;
   // set parameters
-  var layers = 5; // how many polygons to draw at single position
-  var shift = 30; // degree of shift in square
+  var layers = 3; // how many polygons to draw at single position
+  var shift = 2; // degree of shift in square
   var space = 5; // spacing between polygons
 
-  var num = 3; // num squares in row/column
+  var num = 25; // num squares in row/column
   var w = (innerWidth - (num + 1) * space) / num; // width of individual square
 
-  // draw background square: full size, thistle
-  fill(216, 191, 216);
-  stroke(216, 191, 216);
-  quad(0, 0, innerWidth, 0, innerWidth, innerWidth, 0, innerWidth)
+  // draw background square: full size, random
+  var r = 155;//random(200,255);
+  var g = 160;
+  var b = 200;//random(200,255);
+  background(r,g,b);
+
   noFill();
 
   // change stroke to random color
-  stroke(random(200,255),random(200,255),random(200,255));
+  stroke(r-100, g-100, b-100);
 
   // draw all squares
   for (var x = space; x < width - space; x += w + space) {
