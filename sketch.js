@@ -35,7 +35,7 @@ function genQuad() {
   var shift = 30; // degree of shift in square
   var space = 5; // spacing between polygons
 
-  var num = 3; // num squares in row/column
+  var num = 30; // num squares in row/column
   var w = (innerWidth - (num + 1) * space) / num; // width of individual square
 
   // draw background square: full size, thistle
